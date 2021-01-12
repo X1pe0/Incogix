@@ -1,14 +1,7 @@
-import time
-import sys
 import os
 import subprocess 
 from netaddr import iter_iprange
-from threading import Thread
 import threading
-import random
-import socket
-import struct
-import scapy.all
 from scapy.all import *
 
 ## Do not make thread limit more then the IP range. ##
@@ -21,12 +14,12 @@ port_range_start = "0"
 port_range_stop = "9000"
 threadLock = threading.Lock()
 with threadLock:
+    # Supporting non-standard addresses is probably not necessary, revise as needed
     generator = iter_iprange(IP_range_Start, IP_range_Stop, step=1)
     
 
 def scanit(num):
-    
-    
+     
     for ips in generator:
         print ('Worker: %s Scanning - %s'%(num,ips))
         response = os.system("ping -w 1 -c 1 " + str(ips) + " > scan.log")
