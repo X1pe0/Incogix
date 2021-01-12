@@ -10,6 +10,16 @@
         }
     }
     // prints out how many were in the directory
-    echo '<h3 data-v-a0a32cba="" style="color: rgb(255, 255, 255);"> &lt;<span data-v-a0a32cba="" style="color: red;">' .$i. ' / Scanned</span>&gt;</h3>';
+    echo '<div style="width: 20%; display: table;"><div style="display: table-row; height: 100px;"><div style="width: 50%; display: table-cell;"><h3 data-v-a0a32cba="" style="color: rgb(255, 255, 255);"> &lt;<span data-v-a0a32cba="" style="color: red;">' .$i. ' / Scanned</span>&gt;</h3></div>';
+    $CVE = shell_exec('cat ./scan/'. $file . '| grep -c "VULN"');
+    if ($CVE == ""){
+        echo '<div style="display: table-cell;"> <h3 data-v-a0a32cba="" style="color: rgb(255, 255, 255);"> &lt;<span data-v-a0a32cba="" style="color: lime;">0 / CVEs</span>&gt;</h3></div>';
+
+    }else{
+        echo '<div style="display: table-cell;"> <h3 data-v-a0a32cba="" style="color: rgb(255, 255, 255);"> &lt;<span data-v-a0a32cba="" style="color: lime;">' .$CVE. ' / CVEs</span>&gt;</h3></div>';
+
+    }
+    
 ?>
 </div>
+<div style="width: 100%; display: table;"><div style="display: table-row; height: 100px;"><div style="width: 50%; display: table-cell;">
