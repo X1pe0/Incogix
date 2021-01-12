@@ -5,17 +5,10 @@
 <center>
 <br><br>
 <font stryle="color:white">
-
-
-
-
-
-
-
 <img src="https://nabyte.com/upload/5cb4b1285e1779b0608bcaaa4e8c44c208cc25eflogo_1.png">
             <form name="form" method="post">
-            <input type="search" maxlength="2000" class="textInput" name="text_box" size="45"/>
-            <input class="button" type="submit" id="search-submit" value="&lt;Search&gt;" /></br>
+            <input onclick="function set() { b=document.getElementById('hideme_stats'); b.style.display='none'; d=document.getElementById('dotted_e'); } setTimeout(set);" type="search" maxlength="2000" class="textInput" name="text_box" size="45"/>
+            <input onclick="function set() { b=document.getElementById('hideme_stats'); b.style.display='none'; d=document.getElementById('dotted_e'); } setTimeout(set);" class="button" type="submit" id="search-submit" value="&lt;Search&gt;" /></br>
 
         </form>
         
@@ -63,7 +56,6 @@ font-size: 1.1em;
 * {
   box-sizing: border-box;
 }
-
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300);
  #p {
    position:absolute;
@@ -99,7 +91,6 @@ a{
 a:hover{
   text-decoration: line-through;
 }
-
 </style>
 <script type="text/javascript">
         setTimeout(function() {Ajax();}, 1000);
@@ -127,7 +118,7 @@ a:hover{
                 {
                     if (/4|^complete$/.test($http.readyState)) {
                         document.getElementById('ReloadThis').innerHTML = $http.responseText;
-                        setTimeout(function(){$self();}, 3000);
+                        setTimeout(function(){$self();}, 30000000);
                     }
                 };
         
@@ -204,7 +195,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
         echo substr ('<LI><font size="1"><p>' . strip_tags($ssh), 0, 100) . '</p></font>';
         echo substr ('<font size="1"><p>' . strip_tags($http), 0, 100) . '</p></font>';
         echo substr ('<font size="1"><p>' . strip_tags($CVE_Search), 0, 150) . '</p></font>';
-        echo substr ('<p><font size="1" style="color:red">' . strip_tags($CVE), 0, 100) . '</UL></p></font></div></fieldset><br><center><font style="color:#111111">&lt;---------------------------------------------------------------------------------------------------&gt;</font></center>';
+        if ($CVE == ""){
+          echo "";
+        }else{
+          echo substr ('<p><font size="1" style="color:red">' . strip_tags($CVE), 0, 100) . '</UL></p></font></div></fieldset><br><center><font style="color:#111111">&lt;---------------------------------------------------------------------------------------------------&gt;</font></center>';
+        }
 		$i++;
                 }
             }
