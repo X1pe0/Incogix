@@ -2,10 +2,16 @@
 <html>
 <title id="title">Incogix</title>
 <body bgcolor="#EBEDEF">
+<link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
+
 <center>
-<br><br>
+<br>
 <font stryle="color:white">
-<img src="https://nabyte.com/upload/5cb4b1285e1779b0608bcaaa4e8c44c208cc25eflogo_1.png">
+<?php
+$logo = shell_exec('/usr/games/fortune | /usr/games/cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1)');
+echo "<pre>$logo</pre>";
+?>
+
             <form name="form" method="post">
             <input onclick="function set() { b=document.getElementById('hideme_stats'); b.style.display='none'; d=document.getElementById('dotted_e'); } setTimeout(set);" type="search" maxlength="2000" class="textInput" name="text_box" size="45"/>
             <input onclick="function set() { b=document.getElementById('hideme_stats'); b.style.display='none'; d=document.getElementById('dotted_e'); } setTimeout(set);" class="button" type="submit" id="search-submit" value="&lt;Search&gt;" /></br>
@@ -34,9 +40,9 @@ text_box {
 
 .textInput
 {
-border: 0px solid #D5D5D5;
-background: #555555;
-color: #;
+border: 1px dashed #7A79FF;
+background: black;
+color: lime;
 font-size: 1.1em;
 }
 .button {
@@ -91,6 +97,9 @@ a{
 a:hover{
   text-decoration: line-through;
 }
+body {
+    font-family: 'Ubuntu';font-size: 14px;
+}
 </style>
 <script type="text/javascript">
         setTimeout(function() {Ajax();}, 1000);
@@ -118,7 +127,7 @@ a:hover{
                 {
                     if (/4|^complete$/.test($http.readyState)) {
                         document.getElementById('ReloadThis').innerHTML = $http.responseText;
-                        setTimeout(function(){$self();}, 30000000);
+                        setTimeout(function(){$self();}, 300000);
                     }
                 };
         
@@ -211,3 +220,4 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 
 $dir->close();
 ?>
+
