@@ -1,3 +1,4 @@
+<div id="hideme_stats">
 <?php 
     // integer starts at 0 before counting
     $i = 0; 
@@ -9,5 +10,6 @@
         }
     }
     // prints out how many were in the directory
-    echo "<font style=color:lightgray>IP's Scanned: <b> $i </font></b><br>";
+    echo '<h3 data-v-a0a32cba="" style="color: rgb(255, 255, 255);"> &lt;<span data-v-a0a32cba="" style="color: red;">' .$i. ' / Scanned</span>&gt;</h3>';
 ?>
+</div>
