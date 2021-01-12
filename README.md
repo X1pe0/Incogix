@@ -5,7 +5,7 @@ BAM! - Incogix is a skiddish looking tool written in Python3 and PHP.
 
 You need to apt-get or yum the packages below: 
 
-xsltproc, cowsay, fortune, python3, apache2, php5/7+
+xsltproc, cowsay, fortune, python3, apache2, php5/7+, nmap
 
 # Instructions
 
