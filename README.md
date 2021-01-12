@@ -9,6 +9,8 @@ xsltproc, cowsay, fortune, python3, apache2, php5/7+
 
 # Instructions
 
+Edit the IOT_Scanner.py globals to fit your needs.
+
 Drag and drop the repo into your www/html folder. Open a terminal and run the IOT_Scanner.py. Done!
 Start apache and navigate to localhost.
 
