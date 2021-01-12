@@ -1,5 +1,3 @@
-
-
 <html>
 <title id="title">Incogix</title>
 <body bgcolor="#EBEDEF">
@@ -196,21 +194,31 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
                 usleep(10000); 
 
             
-                echo '<div style="width:1000px; margin:0 auto;"><font style="color:#B365FF; font-family:"Lucida Console"><b>&lt;Found Match&gt;</b> --&gt <a target="_blank" href="/scan/'. $file .'">'. htmlspecialchars($file) .'</a><font style="color:lime">';
+                echo '<div style="width:1000px; margin:0 auto;"><font style="color:#B365FF; font-family:"Lucida Console"><b>&lt;Found Match&gt;</b> --&gt <a target="_blank" href="/scan/'. $file .'">'. htmlspecialchars(basename($file, ".html")) .'</a><font style="color:lime">';
         echo substr (htmlspecialchars($data), 5236, 50).'</font><font style="color:white">';
         $ssh = shell_exec('cat ./scan/'. $file . '| grep "ssh"');
         $http = shell_exec('cat ./scan/'. $file . '| grep "http"');
         $CVE = shell_exec('cat ./scan/'. $file . '| grep "VULN"');
         $CVE_Search = shell_exec('cat ./scan/'. $file . '| grep "CVE"');
-        echo substr ('<font size="1"><p><font style="color:#6A6A6A">&lt;&gt;</font>' . strip_tags($ssh), 0, 100) . '</p></font>';
-        echo substr ('<font size="1"><p><font style="color:#6A6A6A">&lt;&gt;</font>' . strip_tags($http), 0, 100) . '</p></font>';
-        echo substr ('<font size="1"><p><font style="color:#6A6A6A">&lt;&gt;</font>' . strip_tags($CVE_Search), 0, 150) . '</p></font>';
-        if ($CVE == NULL){
-          echo substr ('<font size="1" style="color:red"><p><font style="color:#6A6A6A">&lt;&gt;</font>No CVEs Found.</p></font></div>');
+        
+        if ($ssh === NULL){
+          echo substr ('<font size="1"><p><font style="color:#6A6A6A">&oast;</font>N/A</p></font>');
         }else{
-          echo substr ('<font size="1" style="color:red"><p><font style="color:#6A6A6A">&lt;&gt;</font>' . strip_tags($CVE), 0, 100) . '</p></font></div>';
+          echo substr ('<font size="1"><p><font style="color:#6A6A6A">&oast;</font>' . strip_tags($ssh), 0, 100) . '</p></font>';
         }
-        echo '<center><font style="color:#111111">&lt;---------------------------------------------------------------------------------------------------&gt;</font></center>';
+        
+        if ($http === NULL){
+          echo substr ('<font size="1"><p><font style="color:#6A6A6A">&oast;</font>N/A</p></font>');
+        }else{
+          echo substr ('<font size="1"><p><font style="color:#6A6A6A">&oast;</font>' . strip_tags($http), 0, 100) . '</p></font>';
+        }
+        echo substr ('<font size="1"><p><font style="color:#6A6A6A">&oast;</font>' . strip_tags($CVE_Search), 0, 150) . '</p></font>';
+        if ($CVE === NULL){
+          echo substr ('<font size="1" style="color:red"><p><font style="color:#6A6A6A">&oast;</font>N/A</p></font></div>');
+        }else{
+          echo substr ('<font size="1" style="color:red"><p><font style="color:#6A6A6A">&oast;</font>' . strip_tags($CVE), 0, 100) . '</p></font></div>';
+        }
+        echo '<center><font style="color:gray">&lt;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------&gt;</font></center>';
 		$i++;
                 }
             }
@@ -222,4 +230,3 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 
 $dir->close();
 ?>
-
