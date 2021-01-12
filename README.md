@@ -11,7 +11,7 @@ Still working on it, however it works.
 ![Alt text](https://github.com/X1pe0/Incogix/blob/main/images/screenshot.PNG "Image")
 
 
-## If you come across any erros try the following
+## If you come across any errors try the following
 
 if you're getting the error `FileNotFoundError: [Errno 2] No such file or directory: b'liblibc.a'`
 
