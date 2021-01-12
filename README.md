@@ -8,6 +8,6 @@ Apache2 and or webserver of choice needed.
 Still working on it, however it works. 
 
 
-![Alt text](https://github.com/X1pe0/Incogix/blob/main/22e8f786156c09254133929ffbd0a8e27753a531Capture.PNG "Image")
+![Alt text](https://github.com/X1pe0/Incogix/blob/main/images/screenshot.PNG "Image")
 
 
