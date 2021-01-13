@@ -14,7 +14,7 @@ Edit the IOT_Scanner.py globals to fit your needs.
 Drag and drop the repo into your www/html folder. Open a terminal and run the IOT_Scanner.py. Done!
 Start apache and navigate to localhost.
 
-# Info
+# Info/To Be Added.
 
 Still working on it, however it works. Theme will be adjusted. 
 
