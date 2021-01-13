@@ -1,7 +1,7 @@
 # Incogix
 You ever want your own personal Shodan?
 
-BAM! - Incogix is IoT scanner written in Python3 and PHP. 
+BAM! - Incogix is an IoT scanner written in Python3 and PHP. 
 
 You may need to apt-get, yum, dnf, etc.. the packages below: 
 
