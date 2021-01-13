@@ -1,3 +1,4 @@
+
 <html>
 <title id="title">Incogix</title>
 <body bgcolor="#EBEDEF">
@@ -57,7 +58,19 @@ font-size: 1.1em;
     cursor: pointer;
     
 }
-
+.rescan {
+    background-color: black;
+    border: none;
+    color: #74FFEF;
+    padding: 1px 5px;
+    text-align: center;
+    text-decoration: bold;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+    
+}
 * {
   box-sizing: border-box;
 }
@@ -195,7 +208,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 
             
                 echo '<div style="width:1000px; margin:0 auto;"><font style="color:#B365FF; font-family:"Lucida Console"><b>&lt;Found Match&gt;</b> --&gt <a target="_blank" href="/scan/'. $file .'">'. htmlspecialchars(basename($file, ".html")) .'</a><font style="color:lime">';
-        echo substr (htmlspecialchars($data), 5236, 50).'</font><font style="color:white">';
+        echo substr (htmlspecialchars($data), 5236, 50).'</font><form action="/scan/rescan.php" method="POST"><input type="hidden" id="rit" name="rit" value="' . htmlspecialchars(basename($file, ".html")) . '"><input class="rescan" type="submit" value="Queue For Rescan"></form><font style="color:white">';
         $ssh = shell_exec('cat ./scan/'. $file . '| grep "ssh"');
         $http = shell_exec('cat ./scan/'. $file . '| grep "http"');
         $CVE = shell_exec('cat ./scan/'. $file . '| grep "VULN"');
