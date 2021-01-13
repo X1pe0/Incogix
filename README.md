@@ -5,7 +5,7 @@ BAM! - Incogix is a skiddish looking tool written in Python3 and PHP.
 
 You may need to apt-get, yum, dnf, etc.. the packages below: 
 
-xsltproc, cowsay, fortune, python3, apache2, php5/7+, nmap
+xsltproc, cowsay, fortune, python3, php5/7+, nmap
 
 # Instructions
 
@@ -17,6 +17,11 @@ Start apache and navigate to localhost.
 # Info
 
 Still working on it, however it works. Theme will be adjusted. 
+
+1. Will be adding recent searches and basic history using browser cookies.
+2. Adding a method of staring hosts.
+3. Adding the ability to click a button for re-scan of host. (Also adding "realtime scanning". If the search result is not available; IP will be queued for scanning.)
+4. Adding additonal information regarding host instead of using nmap -> html parsing. Ex: root folder of /127.0.0.1/ with nmap, golismero, dnsrecon, amass, nikto, and arachni scans parsed into a single webpage. This would allow for subdomain enumeration, CVEs vuln, SSL issues, Possible admin pages, Banners, etc... (This would come with little quirks such as RDP screenshots and host -> enumeration/network traversal via web gui. 
 
 
 ![Alt text](https://github.com/X1pe0/Incogix/blob/main/images/Screenshot%20at%202021-01-12%2016-39-46.png "Image")
