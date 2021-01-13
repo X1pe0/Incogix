@@ -187,7 +187,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
                // Its a file, yay! Lets get the file's contents
             
 
-               if ($file == "IOT_Scanner.py" OR $file == "scan.log"){
+               if ($file == "IOT_Scanner.py" OR $file == "scan.log" OR $file == "rescan.php"){
                 
             }else{
 
