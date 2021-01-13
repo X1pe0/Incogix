@@ -3,7 +3,7 @@ You ever want your own personal Shodan?
 
 BAM! - Incogix is a skiddish looking tool written in Python3 and PHP. 
 
-You need to apt-get or yum the packages below: 
+You may need to apt-get, yum, dnf, etc.. the packages below: 
 
 xsltproc, cowsay, fortune, python3, apache2, php5/7+, nmap
 
