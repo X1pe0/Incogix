@@ -29,6 +29,9 @@ thread_limit = 5
 try:
     IP_range_Start = sys.argv[1]
     IP_range_Stop = IP_range_Start
+    os.system("rm %s.html"%(IP_range_Start))
+    os.system("rm %s.scan"%(IP_range_Start))
+    os.system("rm ./raw/%s.scan_raw.txt"%(IP_range_Start))
 except:
     IP_range_Start = "127.0.0.1"
     IP_range_Stop = "127.0.0.3"
