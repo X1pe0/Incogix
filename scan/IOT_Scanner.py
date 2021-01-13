@@ -26,8 +26,12 @@ if user is None:
 ## Do not make thread limit more then the IP range. ##
 thread_limit = 5
 ## IP Range ##
-IP_range_Start = "192.168.1.0"
-IP_range_Stop = "192.168.1.255"
+try:
+    IP_range_Start = sys.argv[1]
+    IP_range_Stop = IP_range_Start
+except:
+    IP_range_Start = "127.0.0.1"
+    IP_range_Stop = "127.0.0.3"
 ## UDP/TCP Port Range ##
 port_range_start = "0"
 port_range_stop = "9000"
