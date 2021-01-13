@@ -26,7 +26,6 @@ Still working on it, however it works. Theme will be adjusted.
 
 
 ![Alt text](https://github.com/X1pe0/Incogix/blob/main/images/rescan.jpg "Image")
-![Alt text](https://github.com/X1pe0/Incogix/blob/main/images/Screenshot%20at%202021-01-12%2016-40-15.png "Image")
 ![Alt text](https://github.com/X1pe0/Incogix/blob/main/images/Screenshot%20at%202021-01-12%2016-41-12.png "Image")
 
 ## If you come across any errors try the following
